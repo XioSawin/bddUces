@@ -1,6 +1,6 @@
 CREATE TRIGGER trigAuditoriaDPr
 on Profesional
-AFTER
+FOR
 DELETE
 	AS
 	BEGIN

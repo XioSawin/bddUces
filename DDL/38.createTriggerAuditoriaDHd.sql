@@ -1,7 +1,7 @@
 
 CREATE TRIGGER trigAuditoriaDHd
 on HorariosDisponib
-AFTER
+FOR
 DELETE
 	AS
 	BEGIN

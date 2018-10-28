@@ -1,6 +1,6 @@
 CREATE TRIGGER trigAuditoriaDPa
 on Pacientes
-AFTER
+FOR
 DELETE
 	AS
 	BEGIN

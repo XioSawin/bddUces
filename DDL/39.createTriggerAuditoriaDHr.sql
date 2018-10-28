@@ -1,6 +1,6 @@
 CREATE TRIGGER trigAuditoriaDHr
 on HorariosRecurrent
-AFTER
+FOR
 DELETE
 	AS
 	BEGIN

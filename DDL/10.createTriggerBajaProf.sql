@@ -1,3 +1,6 @@
+ALTER TABLE Profesional
+ADD id int
+
 create trigger bajaProfesional
 	on Profesional
 	instead of

@@ -1,3 +1,5 @@
+
+
 create trigger bajaPacientes
 	on Pacientes
 	instead of

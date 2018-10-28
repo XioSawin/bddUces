@@ -1,6 +1,6 @@
 CREATE TRIGGER trigAuditoriaDS
 on Servicio
-AFTER
+FOR
 DELETE
 	AS
 	BEGIN
