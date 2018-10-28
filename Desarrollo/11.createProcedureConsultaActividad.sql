@@ -1,9 +1,14 @@
-CREATE PROCEDURE consultaActividad
-AS
-BEGIN
-	SELECT a.id, a.cantidad_por_pagina, a.nro_pagina, a.tipo_actividad
-	FROM auditoria a
-END	
+CREATE PROCEDURE consulta_actividad
+	@actividad char(1),
+	@filas_por_pag int,
+	@num_pag int
+
+	AS BEGIN
+		SELECT id, nombre_usuario, tipo_actividad
+		FROM Auditoria
+		WHERE tipo_actividad = @actividad AND id <= @filas_por_pag*@num_pag AND id > (@num_pag-1)*@filas_por_pag
+	END
+
 
 
 
