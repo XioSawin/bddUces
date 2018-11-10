@@ -12,6 +12,6 @@ AS
 		FROM Pacientes p
 		
 		UPDATE Pacientes
-		SET id=0
+		SET estado=0
 		WHERE nombre = @name
 	end

@@ -1,3 +1,5 @@
+
+
 create trigger bajaServicio
 	ON Servicio
 	instead of
@@ -8,8 +10,14 @@ AS
 
 		SELECT @name = s.nombre
 		FROM Servicio s
+
+		INSERT INTO auditoria (cantidad_por_pagina, nro_pagina, tipo_actividad)
+		values ((SELECT count (*) FROM DELETED), 1, 'D')
 		
 		UPDATE Servicio
-		SET id=0
+		SET estado=0
 		WHERE nombre = @name
 	end
+
+
+	
