@@ -1,3 +1,5 @@
-insert into Profesional (nombre, email, telefono) values ('Odell Beckham', 'obj@gmail.com', '555-937-3456')
-insert into Profesional (nombre, email, telefono) values ('Julian Edelman', 'je11@aol.com', '555-273-2803')
-insert into Profesional (nombre, email, telefono) values ('Monica Bing', 'drbing@studio.com', '11-6574-2896')
+EXEC altaProfesional @nombre='Tony Romo', @email='trgoat@cbs.com', @telefono='555-1456-0987'
+EXEC altaProfesional @nombre='Lindsey Jones', @email='ljones@aol.com', @telefono='11-6789-0132'
+EXEC altaProfesional @nombre='Baker Mayfield', @email='baker@browns.wt', @telefono='4876-0123'
+EXEC altaProfesional @nombre='Nicole Sawin', @email='ns@hotmail.com', @telefono='22-2843-9876'
+EXEC altaProfesional @nombre='Odell Beckham', @email='objGOAT@gmail.com', @telefono='8080-9797'

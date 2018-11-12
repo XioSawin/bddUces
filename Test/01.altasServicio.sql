@@ -1,3 +1,5 @@
-insert into Servicio (nombre, tipo) values ('radiologia', 'xr')
-insert into Servicio (nombre, tipo) values ('cirugia', 'er')
-insert into Servicio (nombre, tipo) values ('consulta', 'ct')
+EXEC altaServicio @nombre='Resonancia magnetica', @tipo='MR'
+EXEC altaServicio @nombre='Laboratorio', @tipo='LA'
+EXEC altaServicio @nombre='Consulta médica', @tipo='CM'
+EXEC altaServicio @nombre='Guardia', @tipo='GD'
+EXEC altaServicio @nombre='Rayos', @tipo='RY'

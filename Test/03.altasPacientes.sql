@@ -1,3 +1,5 @@
-insert into Pacientes (nombre, email, telefono) values ('Colleen Wolfe', 'cfox@nfl.com', '0')
-insert into Pacientes (nombre, email, telefono) values ('John Gonzalez', 'who@gmail.com', '3774-9824')
-insert into Pacientes (nombre, email, telefono) values ('Erica Tamposi', 'losecannon@hotmail.com', '377-923-4567')
+EXEC altaPacientes @nombre='Emilia Saccone', @email='esaccone@gmail.com', @telefono='555-1456-0987'
+EXEC altaPacientes @nombre='Tomassina Joly', @email='tommyjoly@hotmail.com', @telefono='11-6789-0132'
+EXEC altaPacientes @nombre='Joslyn Davis', @email='davis.joslyn@cbs.co', @telefono='4876-0123'
+EXEC altaPacientes @nombre='Marc Sessler', @email='goBrowns@nfl.com', @telefono='22-2843-9876'
+EXEC altaPacientes @nombre='Gregg Rossenthal', @email='throneofease@patriots.uk', @telefono='8080-9797'
