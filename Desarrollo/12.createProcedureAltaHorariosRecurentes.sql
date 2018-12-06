@@ -21,7 +21,7 @@ BEGIN
                                                                         VALUES (@id_servicio_profesional, @es_profesional, @tipo_repeticion, @cantidad_repeticiones, DATEADD(dd, @contador, @fecha_hora_inicio), DATEADD(dd, @contador, @fecha_hora_fin))
                         IF (@tipo_repeticion = 'l')
                                 INSERT INTO HorariosRecurrent (id_servicio_profesional, es_profesional, tipo_repeticion, cantidad_repeticiones, fecha_hora_inicio, fecha_hora_fin)
-                                                                        VALUES (@id_servicio_profesional, @es_profesional, @tipo_repeticion, @cantidad_repeticiones, DATEADD(dw, @contador, @fecha_hora_inicio), DATEADD(dw, @contador, @fecha_hora_fin))
+                                                                        VALUES (@id_servicio_profesional, @es_profesional, @tipo_repeticion, @cantidad_repeticiones, dbo.ADDWKDAYS(@fecha_hora_inicio, @contador), dbo.ADDWKDAYS(@fecha_hora_fin, @contador))
                                 
                         IF (@tipo_repeticion = 's')
                                 INSERT INTO HorariosRecurrent (id_servicio_profesional, es_profesional, tipo_repeticion, cantidad_repeticiones, fecha_hora_inicio, fecha_hora_fin)
