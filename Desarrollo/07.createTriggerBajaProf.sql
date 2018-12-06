@@ -1,5 +1,3 @@
-drop trigger bajaProfesional
-
 create trigger bajaProfesional
 	on Profesional
 	instead of
