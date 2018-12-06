@@ -3,7 +3,8 @@ create table auditoria (
 	nombre_usuario varchar (50) DEFAULT SYSTEM_USER,
 	cantidad_por_pagina int, 
 	nro_pagina int,
-	tipo_actividad char(1)
+	tipo_actividad char(1), 
+	fecha datetime
 )
 
 
