@@ -2,6 +2,7 @@ drop procedure altaHorariosRecurr
 go
 
 CREATE PROCEDURE altaHorariosRecurr
+        @id_servicio_profesional int,
         @es_profesional bit,
         @tipo_repeticion char(1),
         @cantidad_repeticiones int,
@@ -16,20 +17,20 @@ BEGIN
         WHILE (@contador != @cantidad_repeticiones)
                 BEGIN 
                         IF (@tipo_repeticion = 'c')
-                                INSERT INTO HorariosRecurrent (es_profesional, tipo_repeticion, cantidad_repeticiones, fecha_hora_inicio, fecha_hora_fin)
-                                                                        VALUES (@es_profesional, @tipo_repeticion, @cantidad_repeticiones, DATEADD(dd, @contador, @fecha_hora_inicio), DATEADD(dd, @contador, @fecha_hora_fin))
+                                INSERT INTO HorariosRecurrent (id_servicio_profesional, es_profesional, tipo_repeticion, cantidad_repeticiones, fecha_hora_inicio, fecha_hora_fin)
+                                                                        VALUES (@id_servicio_profesional, @es_profesional, @tipo_repeticion, @cantidad_repeticiones, DATEADD(dd, @contador, @fecha_hora_inicio), DATEADD(dd, @contador, @fecha_hora_fin))
                         IF (@tipo_repeticion = 'l')
-                                INSERT INTO HorariosRecurrent (es_profesional, tipo_repeticion, cantidad_repeticiones, fecha_hora_inicio, fecha_hora_fin)
-                                                                        VALUES (@es_profesional, @tipo_repeticion, @cantidad_repeticiones, DATEADD(dw, @contador, @fecha_hora_inicio), DATEADD(dw, @contador, @fecha_hora_fin))
+                                INSERT INTO HorariosRecurrent (id_servicio_profesional, es_profesional, tipo_repeticion, cantidad_repeticiones, fecha_hora_inicio, fecha_hora_fin)
+                                                                        VALUES (@id_servicio_profesional, @es_profesional, @tipo_repeticion, @cantidad_repeticiones, DATEADD(dw, @contador, @fecha_hora_inicio), DATEADD(dw, @contador, @fecha_hora_fin))
                                 
                         IF (@tipo_repeticion = 's')
-                                INSERT INTO HorariosRecurrent (es_profesional, tipo_repeticion, cantidad_repeticiones, fecha_hora_inicio, fecha_hora_fin)
-                                                                        VALUES (@es_profesional, @tipo_repeticion, @cantidad_repeticiones, DATEADD(wk, @contador, @fecha_hora_inicio), DATEADD(wk, @contador, @fecha_hora_fin))
+                                INSERT INTO HorariosRecurrent (id_servicio_profesional, es_profesional, tipo_repeticion, cantidad_repeticiones, fecha_hora_inicio, fecha_hora_fin)
+                                                                        VALUES (@id_servicio_profesional, @es_profesional, @tipo_repeticion, @cantidad_repeticiones, DATEADD(wk, @contador, @fecha_hora_inicio), DATEADD(wk, @contador, @fecha_hora_fin))
 
 
                         IF (@tipo_repeticion = 'm')
-                                INSERT INTO HorariosRecurrent (es_profesional, tipo_repeticion, cantidad_repeticiones, fecha_hora_inicio, fecha_hora_fin)
-                                                                        VALUES (@es_profesional, @tipo_repeticion, @cantidad_repeticiones, DATEADD(mm, @contador, @fecha_hora_inicio), DATEADD(mm, @contador, @fecha_hora_fin))
+                                INSERT INTO HorariosRecurrent (id_servicio_profesional, es_profesional, tipo_repeticion, cantidad_repeticiones, fecha_hora_inicio, fecha_hora_fin)
+                                                                        VALUES (@id_servicio_profesional, @es_profesional, @tipo_repeticion, @cantidad_repeticiones, DATEADD(mm, @contador, @fecha_hora_inicio), DATEADD(mm, @contador, @fecha_hora_fin))
 
 
                         SET @contador = @contador+1
